@@ -11,6 +11,8 @@ import Target from "../components/Target";
 import ReactLogo from "../components/ReactLogo";
 import Cube from "../components/Cube";
 import Rings from "../components/Rings";
+import HeroCamera from "../components/HeroCamera";
+import Button from "../components/Button";
 
 const Hero: React.FC = () => {
   const isSmall = useMediaQuery({ maxWidth: 640 });
@@ -34,17 +36,19 @@ const Hero: React.FC = () => {
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-            <HackerRoom
-              scale={sizes.deskScale}
-              position={
-                new Vector3(
-                  sizes.deskPosition[0],
-                  sizes.deskPosition[1],
-                  sizes.deskPosition[2]
-                )
-              }
-              rotation={[0.2, -Math.PI, 0]}
-            />
+            <HeroCamera isMobile={isMobile}>
+              <HackerRoom
+                scale={sizes.deskScale}
+                position={
+                  new Vector3(
+                    sizes.deskPosition[0],
+                    sizes.deskPosition[1],
+                    sizes.deskPosition[2]
+                  )
+                }
+                rotation={[0.2, -Math.PI, 0]}
+              />
+            </HeroCamera>
             <group>
               <Target
                 position={
@@ -79,6 +83,13 @@ const Hero: React.FC = () => {
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
+      </div>
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10">
+        <Button
+          name="Let’s work together"
+          isBeam
+          containerClass="sm:w-fit w-full sm:min-w-96"
+        />
       </div>
     </section>
   );

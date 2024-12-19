@@ -103,10 +103,6 @@ const HackerRoom: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
         material={materials.cables_mat}
       />
       <mesh
-        geometry={nodes.table_table_mat_0_10.geometry}
-        material={materials.props_mat}
-      />
-      <mesh
         geometry={nodes.table_table_mat_0_11.geometry}
         material={materials.ground_mat}
       />
