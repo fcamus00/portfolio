@@ -39,7 +39,13 @@ type GLTFResult = GLTF & {
 };
 
 const HackerRoom: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
-  const { nodes, materials } = useGLTF("/models/hacker-room.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF(
+    `${
+      import.meta.env.VITE_APP_MODELS_PATH
+        ? import.meta.env.VITE_APP_MODELS_PATH
+        : ""
+    }/models/hacker-room.glb`
+  ) as GLTFResult;
 
   const monitortxt = useTexture("textures/desk/monitor.png");
   const screenTxt = useTexture("textures/desk/screen.png");
@@ -112,6 +118,6 @@ const HackerRoom: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
   );
 };
 
-useGLTF.preload("/models/hacker-room.glb");
+useGLTF.preload("/portfolio/models/hacker-room.glb");
 
 export default HackerRoom;

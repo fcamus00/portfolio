@@ -15,7 +15,13 @@ type GLTFResult = GLTF & {
 };
 
 const Cube: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
-  const { nodes } = useGLTF("models/cube.glb") as GLTFResult;
+  const { nodes } = useGLTF(
+    `${
+      import.meta.env.VITE_APP_MODELS_PATH
+        ? import.meta.env.VITE_APP_MODELS_PATH
+        : ""
+    }/models/cube.glb`
+  ) as GLTFResult;
 
   const texture = useTexture("textures/cube.png");
 
@@ -62,6 +68,6 @@ const Cube: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
   );
 };
 
-useGLTF.preload("models/cube.glb");
+useGLTF.preload("/portfolio/models/cube.glb");
 
 export default Cube;
