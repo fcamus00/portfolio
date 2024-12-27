@@ -1,7 +1,7 @@
-import * as THREE from "three";
-import { useFrame } from "@react-three/fiber";
-import React, { useRef } from "react";
-import { easing } from "maath";
+import * as THREE from 'three';
+import { useFrame } from '@react-three/fiber';
+import React, { useRef } from 'react';
+import { easing } from 'maath';
 
 type HeroCameraProps = {
   children?: React.ReactNode;
@@ -15,12 +15,7 @@ const HeroCamera: React.FC<HeroCameraProps> = ({ children, isMobile }) => {
     easing.damp3(state.camera.position, [0, 0, 20], 0.25, delta);
 
     if (!isMobile) {
-      easing.dampE(
-        groupRef.current!.rotation,
-        [-state.pointer.y / 3, -state.pointer.x / 5, 0],
-        0.25,
-        delta
-      );
+      easing.dampE(groupRef.current!.rotation, [-state.pointer.y / 3, -state.pointer.x / 5, 0], 0.25, delta);
     }
   });
 

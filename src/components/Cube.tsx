@@ -1,29 +1,25 @@
-import * as THREE from "three";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import React, { useRef, useState } from "react";
-import { Float, useGLTF, useTexture } from "@react-three/drei";
-import { GLTF } from "three-stdlib";
+import * as THREE from 'three';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import React, { useRef, useState } from 'react';
+import { Float, useGLTF, useTexture } from '@react-three/drei';
+import { GLTF } from 'three-stdlib';
 
 type GLTFResult = GLTF & {
   nodes: {
-    ["Cube"]: THREE.Mesh;
+    ['Cube']: THREE.Mesh;
   };
   materials: {
-    ["Cube"]: THREE.MeshStandardMaterial;
+    ['Cube']: THREE.MeshStandardMaterial;
   };
 };
 
-const Cube: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
+const Cube: React.FC<JSX.IntrinsicElements['group']> = (props) => {
   const { nodes } = useGLTF(
-    `${
-      import.meta.env.VITE_APP_MODELS_PATH
-        ? import.meta.env.VITE_APP_MODELS_PATH
-        : ""
-    }/models/cube.glb`
+    `${import.meta.env.VITE_APP_MODELS_PATH ? import.meta.env.VITE_APP_MODELS_PATH : ''}/models/cube.glb`,
   ) as GLTFResult;
 
-  const texture = useTexture("textures/cube.png");
+  const texture = useTexture('textures/cube.png');
 
   const cubeRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
@@ -35,8 +31,8 @@ const Cube: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
         repeatDelay: 0.5,
       })
       .to(cubeRef.current!.rotation, {
-        y: hovered ? "+=2" : `+=${Math.PI * 2}`,
-        x: hovered ? "+=2" : `-=${Math.PI * 2}`,
+        y: hovered ? '+=2' : `+=${Math.PI * 2}`,
+        x: hovered ? '+=2' : `-=${Math.PI * 2}`,
         duration: 2.5,
         stagger: {
           each: 0.15,
@@ -46,13 +42,7 @@ const Cube: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
 
   return (
     <Float floatIntensity={2}>
-      <group
-        position={[9, -4, 0]}
-        rotation={[2.6, 0.8, -1.8]}
-        scale={0.74}
-        dispose={null}
-        {...props}
-      >
+      <group position={[9, -4, 0]} rotation={[2.6, 0.8, -1.8]} scale={0.74} dispose={null} {...props}>
         <mesh
           ref={cubeRef}
           castShadow
@@ -68,6 +58,6 @@ const Cube: React.FC<JSX.IntrinsicElements["group"]> = (props) => {
   );
 };
 
-useGLTF.preload("/portfolio/models/cube.glb");
+useGLTF.preload('/portfolio/models/cube.glb');
 
 export default Cube;

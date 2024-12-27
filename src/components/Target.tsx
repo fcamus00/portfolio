@@ -1,13 +1,13 @@
-import React, { useRef } from "react";
-import * as THREE from "three";
-import gsap from "gsap";
-import { useGLTF } from "@react-three/drei";
-import { useGSAP } from "@gsap/react";
+import React, { useRef } from 'react';
+import * as THREE from 'three';
+import gsap from 'gsap';
+import { useGLTF } from '@react-three/drei';
+import { useGSAP } from '@gsap/react';
 
-const Target: React.FC<JSX.IntrinsicElements["mesh"]> = (props) => {
+const Target: React.FC<JSX.IntrinsicElements['mesh']> = (props) => {
   const targetRef = useRef<THREE.Mesh>(null);
   const { scene } = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
+    'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf',
   );
 
   useGSAP(() => {

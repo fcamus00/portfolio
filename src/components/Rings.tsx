@@ -1,8 +1,8 @@
-import * as THREE from "three";
-import { useGSAP } from "@gsap/react";
-import { Center, useTexture } from "@react-three/drei";
-import gsap from "gsap";
-import React, { useCallback, useRef } from "react";
+import * as THREE from 'three';
+import { useGSAP } from '@gsap/react';
+import { Center, useTexture } from '@react-three/drei';
+import gsap from 'gsap';
+import React, { useCallback, useRef } from 'react';
 
 type RingProps = {
   position: number[];
@@ -16,7 +16,7 @@ const Rings: React.FC<RingProps> = ({ position }) => {
     }
   }, []);
 
-  const texture = useTexture("textures/rings.png");
+  const texture = useTexture('textures/rings.png');
 
   useGSAP(
     () => {
@@ -40,12 +40,12 @@ const Rings: React.FC<RingProps> = ({ position }) => {
             stagger: {
               each: 0.15,
             },
-          }
+          },
         );
     },
     {
       dependencies: position,
-    }
+    },
   );
 
   return (

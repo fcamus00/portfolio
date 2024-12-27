@@ -1,18 +1,18 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
-import { useMediaQuery } from "react-responsive";
-import { Vector3 } from "three";
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { PerspectiveCamera } from '@react-three/drei';
+import { useMediaQuery } from 'react-responsive';
+import { Vector3 } from 'three';
 
-import { calculateSizes } from "../constants";
-import HackerRoom from "../components/HackerRoom";
-import CanvasLoader from "../components/CanvasLoader";
-import Target from "../components/Target";
-import ReactLogo from "../components/ReactLogo";
-import Cube from "../components/Cube";
-import Rings from "../components/Rings";
-import HeroCamera from "../components/HeroCamera";
-import Button from "../components/Button";
+import { calculateSizes } from '../constants';
+import HackerRoom from '../components/HackerRoom';
+import CanvasLoader from '../components/CanvasLoader';
+import Target from '../components/Target';
+import ReactLogo from '../components/ReactLogo';
+import Cube from '../components/Cube';
+import Rings from '../components/Rings';
+import HeroCamera from '../components/HeroCamera';
+import Button from '../components/Button';
 
 const Hero: React.FC = () => {
   const isSmall = useMediaQuery({ maxWidth: 640 });
@@ -27,9 +27,7 @@ const Hero: React.FC = () => {
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           Hi, I'm Felipe Camus <span className="waving-hand">👋🏻</span>
         </p>
-        <p className="hero_tag text-gray_gradient">
-          Developing, Learning, Growing
-        </p>
+        <p className="hero_tag text-gray_gradient">Developing, Learning, Growing</p>
       </div>
       <div className="w-full h-full absolute inset-0">
         {/* <Leva /> */}
@@ -39,44 +37,20 @@ const Hero: React.FC = () => {
             <HeroCamera isMobile={isMobile}>
               <HackerRoom
                 scale={sizes.deskScale}
-                position={
-                  new Vector3(
-                    sizes.deskPosition[0],
-                    sizes.deskPosition[1],
-                    sizes.deskPosition[2]
-                  )
-                }
+                position={new Vector3(sizes.deskPosition[0], sizes.deskPosition[1], sizes.deskPosition[2])}
                 rotation={[0.2, -Math.PI, 0]}
               />
             </HeroCamera>
             <group>
               <Target
-                position={
-                  new Vector3(
-                    sizes.targetPosition[0],
-                    sizes.targetPosition[1],
-                    sizes.targetPosition[2]
-                  )
-                }
+                position={new Vector3(sizes.targetPosition[0], sizes.targetPosition[1], sizes.targetPosition[2])}
               />
               <ReactLogo
                 position={
-                  new Vector3(
-                    sizes.reactLogoPosition[0],
-                    sizes.reactLogoPosition[1],
-                    sizes.reactLogoPosition[2]
-                  )
+                  new Vector3(sizes.reactLogoPosition[0], sizes.reactLogoPosition[1], sizes.reactLogoPosition[2])
                 }
               />
-              <Cube
-                position={
-                  new Vector3(
-                    sizes.cubePosition[0],
-                    sizes.cubePosition[1],
-                    sizes.cubePosition[2]
-                  )
-                }
-              />
+              <Cube position={new Vector3(sizes.cubePosition[0], sizes.cubePosition[1], sizes.cubePosition[2])} />
               <Rings position={sizes.ringPosition} />
             </group>
             <ambientLight intensity={1} />
@@ -85,11 +59,7 @@ const Hero: React.FC = () => {
         </Canvas>
       </div>
       <div className="absolute bottom-7 left-0 right-0 w-full z-10">
-        <Button
-          name="Let’s work together"
-          isBeam
-          containerClass="sm:w-fit w-full sm:min-w-96"
-        />
+        <Button name="Let’s work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
       </div>
     </section>
   );

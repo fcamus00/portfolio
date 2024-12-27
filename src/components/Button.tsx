@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type ButtonProps = {
   name: string;
@@ -6,11 +6,7 @@ type ButtonProps = {
   containerClass?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({
-  name,
-  isBeam = false,
-  containerClass,
-}) => {
+const Button: React.FC<ButtonProps> = ({ name, isBeam = false, containerClass }) => {
   return (
     <button className={`btn ${containerClass}`}>
       {isBeam && (
