@@ -13,9 +13,7 @@ type GLTFResult = GLTF & {
 };
 
 const ReactLogo: React.FC<JSX.IntrinsicElements['group']> = (props) => {
-  const { nodes, materials } = useGLTF(
-    `${import.meta.env.VITE_APP_MODELS_PATH ? import.meta.env.VITE_APP_MODELS_PATH : ''}/models/react.glb`,
-  ) as GLTFResult;
+  const { nodes, materials } = useGLTF('/portfolio/models/react.glb') as GLTFResult;
 
   return (
     <Float floatIntensity={1}>

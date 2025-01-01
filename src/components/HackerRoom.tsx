@@ -39,9 +39,7 @@ type GLTFResult = GLTF & {
 };
 
 const HackerRoom: React.FC<JSX.IntrinsicElements['group']> = (props) => {
-  const { nodes, materials } = useGLTF(
-    `${import.meta.env.VITE_APP_MODELS_PATH ? import.meta.env.VITE_APP_MODELS_PATH : ''}/models/hacker-room.glb`,
-  ) as GLTFResult;
+  const { nodes, materials } = useGLTF('/portfolio/models/hacker-room.glb') as GLTFResult;
 
   const monitortxt = useTexture('textures/desk/monitor.png');
   const screenTxt = useTexture('textures/desk/screen.png');

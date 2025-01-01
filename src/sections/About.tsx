@@ -1,5 +1,6 @@
 import React from 'react';
 import Globe from 'react-globe.gl';
+
 import Button from '../components/Button';
 
 const About: React.FC = () => {
@@ -19,7 +20,7 @@ const About: React.FC = () => {
       <div className="grid xl:grid-cols-3 xl:grids-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="/assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
+            <img src="/portfolio/assets/grid1.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
             <div>
               <p className="grid-headtext">Hi, I'm Felipe Camus</p>
               <p className="grid-subtext">I'm a Fullstack Web Developer</p>
@@ -28,7 +29,7 @@ const About: React.FC = () => {
         </div>
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="/assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
+            <img src="/portfolio/assets/grid2.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">I specialize in React Typescript and Next.js</p>
@@ -57,7 +58,7 @@ const About: React.FC = () => {
         </div>
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img src="/assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+            <img src="/portfolio/assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
             <div>
               <p className="grid-headtext">About me</p>
               <p className="grid-subtext">
@@ -71,14 +72,14 @@ const About: React.FC = () => {
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
             <img
-              src="/assets/grid4.png"
+              src="/portfolio/assets/grid4.png"
               alt="grid-4"
               className="w-full md:h-[276px] sm:h-[126px] h-fit object-cover object-top"
             />
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact Me</p>
               <div className="copy-container" onClick={handleCopy}>
-                <img src={copied ? '/assets/tick.svg' : '/assets/copy.svg'} alt="copy" />
+                <img src={copied ? '/portfolio/assets/tick.svg' : '/portfolio/assets/copy.svg'} alt="copy" />
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
                   felipe.camus.d@gmail.com
                 </p>

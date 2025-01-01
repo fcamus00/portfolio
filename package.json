@@ -6,7 +6,7 @@
   "homepage": "https://fcamus00.github.io/portfolio/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build --base=/portfolio/",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
