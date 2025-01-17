@@ -16,7 +16,7 @@ const About: React.FC = () => {
   };
 
   return (
-    <section className="max-w-screen-2xl mx-auto c-space my-20">
+    <section className="max-w-screen-2xl mx-auto c-space my-20" id="about">
       <div className="grid xl:grid-cols-3 xl:grids-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
